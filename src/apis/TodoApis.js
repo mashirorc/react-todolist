@@ -1,4 +1,4 @@
-const URL = "http://localhost:3000/todos";
+const URL = "http://localhost:3001/todos";
 
 const addTodo = (newTodo) => {
   // post
@@ -19,4 +19,15 @@ const getTodos = () => {
   return fetch(URL).then((res) => res.json());
 };
 
-export { addTodo, removeTodo, getTodos };
+const editTodo = (id, title, completed) => {
+  return fetch(URL + `/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+          title,
+          completed
+      })
+  }).then((res) => res.json());
+}
+
+export { addTodo, removeTodo, getTodos, editTodo };

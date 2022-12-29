@@ -39,3 +39,21 @@ code {
 .btn--delete {
   background-color: var(--color-secondary);
 }
+
+.btn--edit {
+  margin-left: auto;
+  margin-right: 5px;
+  background-color: var(--color-primary);
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+#empty-li {
+  list-style-type: none;
+}
+
+#list-reminder-text {
+  text-align: center;
+}
